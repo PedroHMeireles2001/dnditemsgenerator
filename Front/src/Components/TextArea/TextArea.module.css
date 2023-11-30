@@ -1,0 +1,14 @@
+/* Estilizando o textarea readonly e fixo */
+.textarea {
+    width: 100%; /* Ocupa a largura total do contêiner pai */
+    height: 200px; /* Altura fixa, ajuste conforme necessário */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* Desabilita o redimensionamento */
+    font-size: 16px;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vrtical se necessário */
+    border-style: none;
+    background-color: #f0f0f0; /* Adicione uma cor de fundo para indicar que está readonly (opcional) */
+}

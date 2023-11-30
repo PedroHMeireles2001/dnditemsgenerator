@@ -1,0 +1,16 @@
+/* Estilizando o input de texto */
+.text{
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Adicionando estilo quando o input está em foco */
+  .text:focus {
+    border-color: #007bff; /* Altere a cor conforme necessário */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efeito de sombra ao focar */
+    outline: none; /* Removendo a borda padrão do navegador */
+  }

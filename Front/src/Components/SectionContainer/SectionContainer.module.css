@@ -1,0 +1,6 @@
+.container {
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 1200px; /* Define a largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    text-align: center;
+  }

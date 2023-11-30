@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  itemgenerator:
+    build: 
+      context: ./Flask
+    container_name: itemgenerator
+    networks:
+      - compose-network
+    ports:
+      - 5000:5000
+  react:
+    build: 
+      context: ./Front
+    container_name: itemgenerator-react
+    networks:
+      - compose-network
+    ports:
+      - 3000:3000
+networks:
+  compose-network:
+    driver: bridge

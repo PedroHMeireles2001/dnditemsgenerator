@@ -1,0 +1,7 @@
+FROM node:14
+WORKDIR /app-react
+ARG PORT_BUILD=3000
+EXPOSE $PORT_BUILD
+COPY . .
+RUN npm install
+ENTRYPOINT npm start
