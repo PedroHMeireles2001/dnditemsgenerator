@@ -2,10 +2,11 @@ from main import app
 from flask import request, jsonify
 import GPTService as gpt
 from item import Item
+import constants
 
 @app.route("/healthcheck",methods=['POST','GET'])
 def heatlhcheck():
-    return jsonify({health: True})
+    return jsonify({"health": True})
 
 @app.route("/generate",methods=['POST',])
 def generate():
@@ -20,7 +21,7 @@ def generate():
 
 @app.route("/surprise",methods=['POST','GET'])
 def generateSurprise():
-    itemDescription = gpt.chatGPT("", "generate just one name idea for magic items. The exit should only be the magic item. use only plain text, without bold or anything else")
+    itemDescription = gpt.chatGPT("", constants.PROMPT_IDEAS)
     visual = gpt.generateVisuals(itemDescription)
     sheet = gpt.generateSheet(itemDescription)
     itemUrl = gpt.dalle(visual)
