@@ -8,7 +8,6 @@ app = Flask("Item Generator")
 
 from controller import *
 def start():
-    print("rodou")
     cors = CORS(app)
     socket.setdefaulttimeout(100000)
     app.run(host='0.0.0.0', port=5000,debug=True)

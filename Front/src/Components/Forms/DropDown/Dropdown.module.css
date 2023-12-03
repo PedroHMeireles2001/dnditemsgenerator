@@ -1,0 +1,14 @@
+/* Dropdown.module.css */
+
+.dropdown {
+    margin: 20px;
+}
+
+.select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.selected {
+    margin-top: 10px;
+}

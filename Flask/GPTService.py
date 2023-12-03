@@ -4,19 +4,19 @@ import constants
 
 client = OpenAI()
 client.api_key = constants.api_key
-def dalle(prompt):
+def dalle(prompt,res,quality):
     response = client.images.generate(
         model="dall-e-3",
         prompt=prompt,
-        size="1024x1024",
-        quality="standard",
+        size=res,
+        quality=quality,
         n=1,
     )
     image_url = response.data[0].url
     return image_url
-def chatGPT(systemPrompt,prompt):
+def chatGPT(creativity,model,systemPrompt,prompt):
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model= model,
         messages=[
             {
                 "role": "system",
@@ -27,7 +27,7 @@ def chatGPT(systemPrompt,prompt):
                 "content": prompt
             },
         ],
-        temperature=1,
+        temperature=creativity,
         max_tokens=512,
         top_p=1,
         frequency_penalty=0,
@@ -35,8 +35,11 @@ def chatGPT(systemPrompt,prompt):
     )
     return response.choices[0].message.content
 
-def generateVisuals(prompt):
-    return chatGPT(constants.PROMPT_VISUAL,prompt)
+def generateVisuals(prompt,model,creativity):
+    return chatGPT(creativity,model,constants.PROMPT_VISUAL,prompt)
 
-def generateSheet(prompt):
-    return chatGPT(constants.PROMPT_SHEET,prompt)
+def generateSheet(prompt,model,creativity):
+    return chatGPT(creativity,model,constants.PROMPT_SHEET,prompt)
+
+def generateItemDescription(model,creativity):
+    return chatGPT(creativity,model,"", constants.PROMPT_IDEAS)
