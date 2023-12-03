@@ -12,10 +12,10 @@ This application has been developed to provide a unique experience in creating m
 
 2. **Open Source:** This project is open to all enchanters and wizards! Contribute, customize, and expand the magical realms by participating in the development of this Open Source initiative.
 
-At this time, the application is not available online due to budget considerations. However, you can download and run the application locally on your machine.
-
 
 ## How to Use
+
+At this time, the application is not available online due to budget considerations. However, you can download and run the application locally on your machine.
 
 1. Start by ensuring you have Docker and Git installed on your machine.
 
